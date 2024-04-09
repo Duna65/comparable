@@ -1,3 +1,5 @@
+//Made by Dallin Lyman
+//Sorts objects by intensity
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -5,15 +7,15 @@ public class sus implements Comparable<sus>{
     String name;
     int amount;
     int intens;
-    public sus(String in,int ia,int ii){
+    public sus(String in,int ia,int ii){//object
         name=in;
         amount=ia;
         intens=ii;
     }
-    public int getintens(){
+    public int getintens(){//getter
         return this.intens;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) {//makes arraylist with 10 objects
         ArrayList<sus> list = new ArrayList<sus>();
         list.add(new sus("Bob", 4, 5));
         list.add(new sus("Jim", 2, 6));
@@ -25,17 +27,17 @@ public class sus implements Comparable<sus>{
         list.add(new sus("Rick", 5, 5));
         list.add(new sus("Finn", 3, 6));
         list.add(new sus("Chad", 4, 8));
-        System.out.println("Unsorted:");
+        System.out.println("Unsorted:");//prints unsorted list
         for(sus i:list){
             System.out.println(i.name + ", " + i.amount);
         }
-        System.out.println("Sorted:");
-        Collections.sort((List<sus>) list);
+        System.out.println("Sorted:");//prints sorted list
+        Collections.sort((List<sus>) list);//overrides old code
         for(sus i:list){
             System.out.println(i.name + ", " + i.amount);
         }
     }
-    @Override
+    @Override//overrides the old code
     public int compareTo(sus cto) {
         int compare=((sus)cto).getintens();
         return this.intens-compare;
